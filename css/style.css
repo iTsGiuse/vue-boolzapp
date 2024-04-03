@@ -22,7 +22,6 @@ main{
 .container{
     margin: auto;
     max-width: 1200px;
-    border: 1px solid black;
     z-index: 2;
     display: flex;
 }
@@ -32,27 +31,31 @@ main{
     flex-wrap: wrap;
     flex-direction: column;
 }
+.col {
+    height: 100%;
+    border-right: 1px solid grey;
+}
 .lung-35{
     width: 35%;
-    border-right: 1px solid grey;
 }
 .lung-65{
     width: 65%;
 }
 
+/* INTSTAZIONE */
 .intestazione{
-    height: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #eaeaea;
     padding: 5px;
-
+    height: 20%;
 }
 .info{
     display: flex;
     align-items: center;
 }
-.info p{
+.info p, h5{
     margin-left: 5px;
 }
 .ultimo-accesso{
@@ -76,4 +79,97 @@ img{
     margin-left: 15px;
     color: grey;
     font-size: 20px;
+}
+
+/* NOTIFICHE */
+.notifiche{
+    display: flex;
+    padding: 10px;
+    background-color: #8edafc;
+    height: 20%;
+}
+.box-notifiche{
+    background-color: white;
+    border: 1px solid transparent;
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+}
+.box-notifiche .celeste{
+   color: #8edafc;
+   font-size: 25px;
+}
+.attiva-notifiche{
+    color: black;
+    font-weight: normal;
+}
+
+/* CERCA */
+.cerca{
+    display: flex;
+    padding: 12px;
+    background-color: #fafafa;
+    height: 20%;
+}
+.cerca .box-icon, .input-box{
+    border: 0.5px solid grey;
+    background-color: white;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cerca .icona{
+    font-size: 15px;
+    margin-left: 0px;
+}
+
+.input-cerca{
+    border: 0px solid transparent;
+    width: 350px;
+}
+
+/* CONTATTI */
+.contatti{
+    padding: 5px;
+    overflow-y: scroll;
+    background-color: white;
+    height: 60%;
+}
+.contatto{
+    display: flex;
+    justify-content: space-between;
+    border-top: 0.5px solid grey;
+    padding: 5px;
+}
+.grey{
+    color: grey;
+}
+.contatto .info{
+    align-items: start;
+}
+
+/* CHAT */
+.chat{
+    overflow-y: scroll;
+    padding: 10px;
+    background-image: url(./img/mine.jpg);
+    height: 80%;
+}
+
+/* MENU CHAT */
+.menu-chat{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f3eeea;
+    height: 20%;
+}
+.input-chat{
+    width: 600px;
+    height: 35px;
 }
