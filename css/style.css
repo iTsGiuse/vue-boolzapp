@@ -7,10 +7,73 @@
 header{
     height: 120px;
     background-color: #009688;
-    z-index: 0;
+    z-index: 1;
+    position: relative;
 }
 main{
     background-color: #d9dbd5;
-    z-index: 0;
+    z-index: 1;
     height: calc(100vh - 120px);
+    position: relative;
+
+}
+
+/* WEB-APP */
+.container{
+    margin: auto;
+    max-width: 1200px;
+    border: 1px solid black;
+    z-index: 2;
+    display: flex;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.lung-35{
+    width: 35%;
+    border-right: 1px solid grey;
+}
+.lung-65{
+    width: 65%;
+}
+
+.intestazione{
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+
+}
+.info{
+    display: flex;
+    align-items: center;
+}
+.info p{
+    margin-left: 5px;
+}
+.ultimo-accesso{
+    font-size: 14px;
+    color: grey;
+}
+.box-image{
+    height: 48px;
+    width: 48px;
+}
+img{
+    width: 100%;
+    border: 1px solid transparent;
+    border-radius: 20px;
+}
+
+.box-icon{
+    display: flex;
+}
+.icona{
+    margin-left: 15px;
+    color: grey;
+    font-size: 20px;
 }
