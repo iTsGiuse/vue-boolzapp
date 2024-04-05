@@ -66,13 +66,14 @@ main{
 .info p, h5{
     margin-left: 5px;
 }
-.ultimo-accesso{
+.ultimo-messaggio{
     font-size: 14px;
     color: grey;
 }
 .box-image{
     height: 48px;
     width: 48px;
+    flex-shrink: 0;
 }
 img{
     width: 100%;
@@ -167,13 +168,15 @@ img{
     border-top: 0.5px solid grey;
     padding: 5px;
     height: 15%;
+    position: relative;
 }
 .grey{
     color: grey;
 }
 .orario{
-    display: flex;
-    align-items: flex-start !important;
+    position: absolute;
+    bottom: 10px;
+    right: 5px;
 }
 .contatto .info{
     align-items: start;

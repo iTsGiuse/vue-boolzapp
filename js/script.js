@@ -98,8 +98,16 @@ createApp({
         });
       },
 
-      
-    }
+      ultimoMessaggio(contact){
+        const lastMessage = contact.messages[contact.messages.length - 1];
+          if (lastMessage) {
+            return `${lastMessage.message}`;
+          } else {
+            return 'Nessun messaggio';
+          }
+        }
+      },
+
 }).mount('#app');
 
 
