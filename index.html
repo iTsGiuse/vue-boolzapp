@@ -55,12 +55,12 @@
                                 </div>
                             </div>
                             <div class="input-box">
-                            <input class="input-cerca" type="text" placeholder="Cerca o inizia una nuova chat"> 
+                                <input class="input-cerca" type="text" v-model="risultatoRicerca" placeholder="Cerca o inizia una nuova chat" @keyup="filterContacts">
                             </div>
                         </div>
                         <div class="contatti">
                             <template v-for="(contact, index) in contacts">
-                                <div class="contatto">
+                                <div class="contatto" v-if="contact.visible">
                                     <div class="info">
                                         <div class="box-image">
                                             <img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">

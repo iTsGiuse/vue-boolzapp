@@ -85,9 +85,19 @@ createApp({
             ],
           ioFoto: './img/avatar_io.jpg',
           ioNome: 'Sofia',
+          risultatoRicerca: '',
+          isVisible: false,
         };
     },
     methods: {
+
+      filterContacts(){
+        this.contacts.forEach((contact) => {
+            nome = contact.name.toLowerCase();
+            contact.visible = nome.includes(this.risultatoRicerca.toLowerCase());
+        });
+      },
+
       
     }
 }).mount('#app');
