@@ -162,7 +162,6 @@ img{
 }
 .contatto{
     display: flex;
-    justify-content: center;
     align-items: center;
     justify-content: space-between;
     border-top: 0.5px solid grey;
@@ -172,6 +171,10 @@ img{
 .grey{
     color: grey;
 }
+.orario{
+    display: flex;
+    align-items: flex-start !important;
+}
 .contatto .info{
     align-items: start;
 }
@@ -179,12 +182,37 @@ img{
 /* CHAT */
 .chat{
     overflow-y: scroll;
-    background-image: url(./img/mine.jpg) ;
-    background-size: 100%;
+    background-image: url(../img/mine.jpg);
     height: 80%;
-    width: 100%;
+    padding: 15px;
 }
 
+.send{
+    width: 50%;
+    border: 1px solid transparent;
+    border-radius: 10px ;
+    background-color: #d5f9ba;
+    padding: 10px;
+    margin-left: auto;
+    margin-top: 10px;
+}
+.received{
+    width: 50%;
+    border: 1px solid transparent;
+    border-radius: 10px ;
+    background-color: white;
+    padding: 5px;
+    margin-top: 10px;
+}
+.data-css{
+    text-align: right;
+    color: grey;
+    margin-top: 2px;
+    font-size: 15px;
+}
+.m-3{
+    margin-left: 6px;
+}
 /* MENU CHAT */
 .menu-chat{
     display: flex;
