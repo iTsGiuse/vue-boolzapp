@@ -19,10 +19,10 @@
                         <div class="intestazione">
                             <div class="info">
                                 <div class="box-image">
-                                    <img src="./img/avatar_io.jpg" alt="io">
+                                    <img :src="ioFoto" alt="io">
                                 </div>
                                 <div>
-                                    <p>Sofia</p>
+                                    <p>{{ ioNome }}</p>
                                 </div>
                             </div>
                             <div class="box-icon">
@@ -59,220 +59,22 @@
                             </div>
                         </div>
                         <div class="contatti">
-                            <div class="contatto">
-                                <div class="info">
-                                    <div class="box-image">
-                                        <img src="./img/avatar_1.jpg" alt="contatto 1">
+                            <template v-for="(contact, index) in contacts">
+                                <div class="contatto">
+                                    <div class="info">
+                                        <div class="box-image">
+                                            <img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
+                                        </div>
+                                        <div>
+                                            <p  :key="index">{{ contact.name }}</p>
+                                            <p class="ultimo-accesso">Ultimo messaggio inviato</p>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <p>Mario</p>
-                                        <p class="ultimo-accesso">Ultima volta online: 5 min fa</p>
+                                    <div class="orario">
+                                        <span class="grey">12:00</span>
                                     </div>
-                                </div>
-                                <div class="orario">
-                                    <span class="grey">12:00</span>
-                                </div>
-                            </div> 
-                            
-                            <div class="contatto">
-                                <div class="info">
-                                    <div class="box-image">
-                                        <img src="./img/avatar_1.jpg" alt="contatto 1">
-                                    </div>
-                                    <div>
-                                        <p>Mario</p>
-                                        <p class="ultimo-accesso">Ultima volta online: 5 min fa</p>
-                                    </div>
-                                </div>
-                                <div class="orario">
-                                    <span class="grey">12:00</span>
-                                </div>
-                            </div> 
-
-                            <div class="contatto">
-                                <div class="info">
-                                    <div class="box-image">
-                                        <img src="./img/avatar_1.jpg" alt="contatto 1">
-                                    </div>
-                                    <div>
-                                        <p>Mario</p>
-                                        <p class="ultimo-accesso">Ultima volta online: 5 min fa</p>
-                                    </div>
-                                </div>
-                                <div class="orario">
-                                    <span class="grey">12:00</span>
-                                </div>
-                            </div> 
-                            <div class="contatto">
-                                <div class="info">
-                                    <div class="box-image">
-                                        <img src="./img/avatar_1.jpg" alt="contatto 1">
-                                    </div>
-                                    <div>
-                                        <p>Mario</p>
-                                        <p class="ultimo-accesso">Ultima volta online: 5 min fa</p>
-                                    </div>
-                                </div>
-                                <div class="orario">
-                                    <span class="grey">12:00</span>
-                                </div>
-                            </div> 
-                            <div class="contatto">
-                                <div class="info">
-                                    <div class="box-image">
-                                        <img src="./img/avatar_1.jpg" alt="contatto 1">
-                                    </div>
-                                    <div>
-                                        <p>Mario</p>
-                                        <p class="ultimo-accesso">Ultima volta online: 5 min fa</p>
-                                    </div>
-                                </div>
-                                <div class="orario">
-                                    <span class="grey">12:00</span>
-                                </div>
-                            </div> 
-                            <div class="contatto">
-                                <div class="info">
-                                    <div class="box-image">
-                                        <img src="./img/avatar_1.jpg" alt="contatto 1">
-                                    </div>
-                                    <div>
-                                        <p>Mario</p>
-                                        <p class="ultimo-accesso">Ultima volta online: 5 min fa</p>
-                                    </div>
-                                </div>
-                                <div class="orario">
-                                    <span class="grey">12:00</span>
-                                </div>
-                            </div> 
-                            <div class="contatto">
-                                <div class="info">
-                                    <div class="box-image">
-                                        <img src="./img/avatar_1.jpg" alt="contatto 1">
-                                    </div>
-                                    <div>
-                                        <p>Mario</p>
-                                        <p class="ultimo-accesso">Ultima volta online: 5 min fa</p>
-                                    </div>
-                                </div>
-                                <div class="orario">
-                                    <span class="grey">12:00</span>
-                                </div>
-                            </div> 
-                            <div class="contatto">
-                                <div class="info">
-                                    <div class="box-image">
-                                        <img src="./img/avatar_1.jpg" alt="contatto 1">
-                                    </div>
-                                    <div>
-                                        <p>Mario</p>
-                                        <p class="ultimo-accesso">Ultima volta online: 5 min fa</p>
-                                    </div>
-                                </div>
-                                <div class="orario">
-                                    <span class="grey">12:00</span>
-                                </div>
-                            </div> 
-                            <div class="contatto">
-                                <div class="info">
-                                    <div class="box-image">
-                                        <img src="./img/avatar_1.jpg" alt="contatto 1">
-                                    </div>
-                                    <div>
-                                        <p>Mario</p>
-                                        <p class="ultimo-accesso">Ultima volta online: 5 min fa</p>
-                                    </div>
-                                </div>
-                                <div class="orario">
-                                    <span class="grey">12:00</span>
-                                </div>
-                            </div> 
-                            <div class="contatto">
-                                <div class="info">
-                                    <div class="box-image">
-                                        <img src="./img/avatar_1.jpg" alt="contatto 1">
-                                    </div>
-                                    <div>
-                                        <p>Mario</p>
-                                        <p class="ultimo-accesso">Ultima volta online: 5 min fa</p>
-                                    </div>
-                                </div>
-                                <div class="orario">
-                                    <span class="grey">12:00</span>
-                                </div>
-                            </div> 
-                            <div class="contatto">
-                                <div class="info">
-                                    <div class="box-image">
-                                        <img src="./img/avatar_1.jpg" alt="contatto 1">
-                                    </div>
-                                    <div>
-                                        <p>Mario</p>
-                                        <p class="ultimo-accesso">Ultima volta online: 5 min fa</p>
-                                    </div>
-                                </div>
-                                <div class="orario">
-                                    <span class="grey">12:00</span>
-                                </div>
-                            </div> 
-                            <div class="contatto">
-                                <div class="info">
-                                    <div class="box-image">
-                                        <img src="./img/avatar_1.jpg" alt="contatto 1">
-                                    </div>
-                                    <div>
-                                        <p>Mario</p>
-                                        <p class="ultimo-accesso">Ultima volta online: 5 min fa</p>
-                                    </div>
-                                </div>
-                                <div class="orario">
-                                    <span class="grey">12:00</span>
-                                </div>
-                            </div> 
-                            <div class="contatto">
-                                <div class="info">
-                                    <div class="box-image">
-                                        <img src="./img/avatar_1.jpg" alt="contatto 1">
-                                    </div>
-                                    <div>
-                                        <p>Mario</p>
-                                        <p class="ultimo-accesso">Ultima volta online: 5 min fa</p>
-                                    </div>
-                                </div>
-                                <div class="orario">
-                                    <span class="grey">12:00</span>
-                                </div>
-                            </div> 
-                            <div class="contatto">
-                                <div class="info">
-                                    <div class="box-image">
-                                        <img src="./img/avatar_1.jpg" alt="contatto 1">
-                                    </div>
-                                    <div>
-                                        <p>Mario</p>
-                                        <p class="ultimo-accesso">Ultima volta online: 5 min fa</p>
-                                    </div>
-                                </div>
-                                <div class="orario">
-                                    <span class="grey">12:00</span>
-                                </div>
-                            </div> 
-                            
-
-                            <div class="contatto">
-                                <div class="info">
-                                    <div class="box-image">
-                                        <img src="./img/avatar_1.jpg" alt="contatto 1">
-                                    </div>
-                                    <div>
-                                        <p>Mario</p>
-                                        <p class="ultimo-accesso">Ultima volta online: 5 min fa</p>
-                                    </div>
-                                </div>
-                                <div class="orario">
-                                    <span class="grey">12:00</span>
-                                </div>
-                            </div> 
+                                </div>     
+                            </template>
                         </div>
                     </div>
                 </div>

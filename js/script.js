@@ -83,8 +83,14 @@ createApp({
                 ],
               },
             ],
+          ioFoto: './img/avatar_io.jpg',
+          ioNome: 'Sofia',
         };
     },
     methods: {
+      
     }
 }).mount('#app');
+
+
+
