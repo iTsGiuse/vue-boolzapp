@@ -66,9 +66,10 @@ main{
 .info p, h5{
     margin-left: 5px;
 }
-.ultimo-messaggio, .ultimo-accesso{
+.ultimo-accesso{
     font-size: 14px;
     color: grey;
+    font-style: italic;
 }
 .box-image{
     height: 48px;
@@ -181,7 +182,11 @@ img{
 .contatto .info{
     align-items: start;
 }
-
+.ultimo-messaggio{
+    font-size: 14px;
+    color: grey;
+    margin-top: 5px;
+}
 /* CHAT */
 .chat{
     overflow-y: scroll;
@@ -223,13 +228,20 @@ img{
 }
 .box-input-chat{
     width: calc(100% - 20% - 16px);
+    height: 50%;
 }
 .input-chat{
     width: 85%;
-    height: 30%;
+    height: 100%;
     margin-left: 7%;
+    border: 1px solid  transparent;
+    border-radius: 5px ;
 }
 .menu-chat .icona{
     margin-left: 0px;
     font-size: 26px;
+}
+
+.selezionato-css:hover{
+    background-color: rgba(0,0,0,0.3);
 }

@@ -85,10 +85,10 @@ createApp({
             ],
           ioFoto: './img/avatar_io.jpg',
           ioNome: 'Sofia',
+          contattoSelezionato: 0,
           risultatoRicerca: '',
           isVisible: false,
-          attivaChat: 0,
-			    contattoSelezionato: null,
+          stato: '',
           
         };
     },
@@ -101,6 +101,10 @@ createApp({
         });
       },
 
+      selezionaContatto(index) {
+        this.contattoSelezionato = index;
+      },
+
       ultimoMessaggio(contact){
         const lastMessage = contact.messages[contact.messages.length - 1];
           if (lastMessage) {
@@ -111,19 +115,16 @@ createApp({
         }
       },
 
-      activeChat(index){
-        this.attivaChat = index;
-        console.log(attivaChat);
+      statoContatto(stato){
+        let randomNumber = Math.floor(Math.random() * 2) + 1;
+        if (randomNumber == 1){
+          return stato = 'online';
+        } else {
+          return stato = 'offline';
+        }
+
       },
-
-     
-
-      contattoSelected(contact) {
-        this.contattoSelezionato = contact;
-        this.chatAttiva = true;
-    }
-
-      
+    
 
 }).mount('#app');
 

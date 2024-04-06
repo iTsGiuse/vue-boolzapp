@@ -60,7 +60,7 @@
                         </div>
                         <div class="contatti">
                             <template v-for="(contact, index) in contacts">
-                                <div class="contatto" v-if="contact.visible">
+                                <div class="contatto selezionato-css" v-if="contact.visible" @click="selezionaContatto(index); statoContatto()">
                                     <div class="info">
                                         <div class="box-image">
                                             <img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
@@ -80,49 +80,45 @@
                 </div>
                 <div class="row lung-65">
                     <div class="col">
-                        <template v-for="(contact, index) in contacts" >
-                            <div class="intestazione">
-                                <div class="info">
-                                    <div class="box-image">
-                                        <img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
-                                    </div>
-                                    <div>
-                                        <p>{{contact.name}}</p>
-                                        <p class="ultimo-accesso">Ultima volta online: 5 min fa</p>
-                                    </div>
+                        <div class="intestazione" >
+                            <div class="info">
+                                <div class="box-image">
+                                    <img :src="'img/avatar' + contacts[contattoSelezionato].avatar + '.jpg'" :alt="contacts[contattoSelezionato].name">
                                 </div>
-                                <div class="box-icon">
-                                    <div class="icona search">
-                                        <i class="fa-solid fa-magnifying-glass"></i>
-                                    </div>
-                                    <div class="icona allega">
-                                        <i class="fa-solid fa-paperclip"></i>
-                                    </div>
-                                    <div class="icona opzioni">
-                                        <i class="fa-solid fa-ellipsis-vertical"></i>
-                                    </div>
-
+                                <div>
+                                    <p>{{ contacts[contattoSelezionato].name }}</p>
+                                    <p class="ultimo-accesso">{{ stato }}</p>
                                 </div>
                             </div>
-                            <div class="chat">
-                                <div class="message" v-for="(message, index) in contact.messages" :key="index" :class="{ 'send': message.status === 'sent', 'received': message.status === 'received' }" >
-                                    <p class="m-3">{{message.message}}</p>
-                                    <p class="data-css"> {{message.date}}</p>
-                                </div> 
-                                
-                            </div>
-                            <div class="menu-chat">
-                                <div class="emoticon">
-                                    <i class="icona fa-regular fa-face-smile"></i>
+                            <div class="box-icon">
+                                <div class="icona search">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
                                 </div>
-                                <div class="box-input-chat">
-                                    <input class="input-chat" type="text" placeholder="Scrivi un messaggio">
+                                <div class="icona allega">
+                                    <i class="fa-solid fa-paperclip"></i>
                                 </div>
-                                <div class="microphone">
-                                    <i class="icona fa-solid fa-microphone"></i>
+                                <div class="icona opzioni">
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
                                 </div>
                             </div>
-                        </template>
+                        </div>
+                        <div class="chat">
+                             <div class="message" v-for="(message, index) in contacts[contattoSelezionato].messages" :key="index" :class="{ 'send': message.status === 'sent', 'received': message.status === 'received' }" >
+                                <p class="m-3">{{message.message}}</p>
+                                <p class="data-css"> {{message.date}}</p>
+                            </div>     
+                        </div>
+                        <div class="menu-chat">
+                            <div class="emoticon">
+                                <i class="icona fa-regular fa-face-smile"></i>
+                            </div>
+                            <div class="box-input-chat">
+                                <input class="input-chat" type="text" placeholder="Scrivi un messaggio">
+                            </div>
+                            <div class="microphone">
+                                <i class="icona fa-solid fa-microphone"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div> 
