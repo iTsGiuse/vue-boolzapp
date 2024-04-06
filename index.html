@@ -80,83 +80,49 @@
                 </div>
                 <div class="row lung-65">
                     <div class="col">
-                        <div class="intestazione">
-                            <div class="info">
-                                <div class="box-image">
-                                    <img src="./img/avatar_io.jpg" alt="io">
+                        <template v-for="(contact, index) in contacts" >
+                            <div class="intestazione">
+                                <div class="info">
+                                    <div class="box-image">
+                                        <img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
+                                    </div>
+                                    <div>
+                                        <p>{{contact.name}}</p>
+                                        <p class="ultimo-accesso">Ultima volta online: 5 min fa</p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <p>Sofia</p>
-                                    <p class="ultimo-accesso">Ultima volta online: 5 min fa</p>
-                                </div>
-                            </div>
-                            <div class="box-icon">
-                                <div class="icona search">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                </div>
-                                <div class="icona allega">
-                                    <i class="fa-solid fa-paperclip"></i>
-                                </div>
-                                <div class="icona opzioni">
-                                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                                </div>
+                                <div class="box-icon">
+                                    <div class="icona search">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </div>
+                                    <div class="icona allega">
+                                        <i class="fa-solid fa-paperclip"></i>
+                                    </div>
+                                    <div class="icona opzioni">
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    </div>
 
+                                </div>
                             </div>
-                        </div>
-                        <div class="chat">
-                            <div class="send">
-                                <p class="m-3" >ciao, come va?</p>
-                                <p class="data-css"> 12/12/2024 12.05</p>
+                            <div class="chat">
+                                <div class="message" v-for="(message, index) in contact.messages" :key="index" :class="{ 'send': message.status === 'sent', 'received': message.status === 'received' }" >
+                                    <p class="m-3">{{message.message}}</p>
+                                    <p class="data-css"> {{message.date}}</p>
+                                </div> 
+                                
                             </div>
-                            <div class="received">
-                                <p class="m-3">ciao, come va?</p>
-                                <p class="data-css"> 12/12/2024 12.05</p>
+                            <div class="menu-chat">
+                                <div class="emoticon">
+                                    <i class="icona fa-regular fa-face-smile"></i>
+                                </div>
+                                <div class="box-input-chat">
+                                    <input class="input-chat" type="text" placeholder="Scrivi un messaggio">
+                                </div>
+                                <div class="microphone">
+                                    <i class="icona fa-solid fa-microphone"></i>
+                                </div>
                             </div>
-                            <div class="send">
-                                <p class="m-3">ciao, come va?</p>
-                                <p class="data-css"> 12/12/2024 12.05</p>
-                            </div>
-                            <div class="received">
-                                <p class="m-3">ciao, come va?</p>
-                                <p class="data-css"> 12/12/2024 12.05</p>
-                            </div>
-                            <div class="send">
-                                <p class="m-3">ciao, come va?</p>
-                                <p class="data-css"> 12/12/2024 12.05</p>
-                            </div>
-                            <div class="received">
-                                <p class="m-3">ciao, come va?</p>
-                                <p class="data-css"> 12/12/2024 12.05</p>
-                            </div>
-                            <div class="send">
-                                <p class="m-3">ciao, come va?</p>
-                                <p class="data-css"> 12/12/2024 12.05</p>
-                            </div>
-                            <div class="send">
-                                <p class="m-3">ciao, come va?</p>
-                                <p class="data-css"> 12/12/2024 12.05</p>
-                            </div>
-                            <div class="send">
-                                <p class="m-3">ciao, come va?</p>
-                                <p class="data-css"> 12/12/2024 12.05</p>
-                            </div>
-                            <div class="send">
-                                <p class="m-3">ciao, come va?</p>
-                                <p class="data-css"> 12/12/2024 12.05</p>
-                            </div>
-    
-                        </div>
-                        <div class="menu-chat">
-                            <div class="emoticon">
-                                <i class="icona fa-regular fa-face-smile"></i>
-                            </div>
-                            <div class="box-input-chat">
-                                <input class="input-chat" type="text" placeholder="Scrivi un messaggio">
-                            </div>
-                            <div class="microphone">
-                                <i class="icona fa-solid fa-microphone"></i>
-                            </div>
-                        </div>
+                        </template>
                     </div>
                 </div>
             </div> 

@@ -66,7 +66,7 @@ main{
 .info p, h5{
     margin-left: 5px;
 }
-.ultimo-messaggio{
+.ultimo-messaggio, .ultimo-accesso{
     font-size: 14px;
     color: grey;
 }
@@ -189,23 +189,19 @@ img{
     height: 80%;
     padding: 15px;
 }
-
-.send{
+.message{
     width: 50%;
     border: 1px solid transparent;
-    border-radius: 10px ;
-    background-color: #d5f9ba;
+    border-radius: 10px;
     padding: 10px;
-    margin-left: auto;
     margin-top: 10px;
 }
+.send{
+    background-color: #d5f9ba;
+    margin-left: auto;
+}
 .received{
-    width: 50%;
-    border: 1px solid transparent;
-    border-radius: 10px ;
     background-color: white;
-    padding: 5px;
-    margin-top: 10px;
 }
 .data-css{
     text-align: right;

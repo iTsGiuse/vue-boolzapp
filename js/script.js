@@ -87,6 +87,9 @@ createApp({
           ioNome: 'Sofia',
           risultatoRicerca: '',
           isVisible: false,
+          attivaChat: 0,
+			    contattoSelezionato: null,
+          
         };
     },
     methods: {
@@ -107,6 +110,20 @@ createApp({
           }
         }
       },
+
+      activeChat(index){
+        this.attivaChat = index;
+        console.log(attivaChat);
+      },
+
+     
+
+      contattoSelected(contact) {
+        this.contattoSelezionato = contact;
+        this.chatAttiva = true;
+    }
+
+      
 
 }).mount('#app');
 
