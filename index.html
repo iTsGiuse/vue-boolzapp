@@ -60,7 +60,7 @@
                         </div>
                         <div class="contatti">
                             <template v-for="(contact, index) in contacts">
-                                <div class="contatto selezionato-css" v-if="contact.visible" @click="selezionaContatto(index); statoContatto()">
+                                <div class="contatto selezionato-css" v-if="contact.visible" @click="selezionaContatto(index);">
                                     <div class="info">
                                         <div class="box-image">
                                             <img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
@@ -71,7 +71,7 @@
                                         </div>
                                     </div>
                                     <div class="orario">
-                                        <span class="grey">12:00</span>
+                                        <span class="grey">{{ ultimoMessaggioOra(contact) }}</span>
                                     </div>
                                 </div>     
                             </template>
@@ -87,7 +87,7 @@
                                 </div>
                                 <div>
                                     <p>{{ contacts[contattoSelezionato].name }}</p>
-                                    <p class="ultimo-accesso">{{ stato }}</p>
+                                    <p class="ultimo-accesso">{{ Math.random() < 0.5 ? 'online' : 'offline'}}</p>
                                 </div>
                             </div>
                             <div class="box-icon">
@@ -105,7 +105,7 @@
                         <div class="chat">
                              <div class="message" v-for="(message, index) in contacts[contattoSelezionato].messages" :key="index" :class="{ 'send': message.status === 'sent', 'received': message.status === 'received' }" >
                                 <p class="m-3">{{message.message}}</p>
-                                <p class="data-css"> {{message.date}}</p>
+                                <p class="data-css" > {{ mostraOra(message.date) }}</p>
                             </div>     
                         </div>
                         <div class="menu-chat">
@@ -113,7 +113,7 @@
                                 <i class="icona fa-regular fa-face-smile"></i>
                             </div>
                             <div class="box-input-chat">
-                                <input class="input-chat" type="text" placeholder="Scrivi un messaggio">
+                                <input class="input-chat" type="text" v-model="newMessage" placeholder="Scrivi un messaggio" @keyup.enter="inviaMessaggio">
                             </div>
                             <div class="microphone">
                                 <i class="icona fa-solid fa-microphone"></i>
@@ -124,7 +124,7 @@
             </div> 
         </main>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
     <script type="text/javascript" src="./js/script.js"></script>
 </body>
 </html>

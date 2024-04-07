@@ -88,7 +88,8 @@ createApp({
           contattoSelezionato: 0,
           risultatoRicerca: '',
           isVisible: false,
-          stato: '',
+          stato:'',
+          newMessage:'',
           
         };
     },
@@ -112,20 +113,36 @@ createApp({
           } else {
             return 'Nessun messaggio';
           }
-        }
+        },
+
+        ultimoMessaggioOra(contact) {
+          const lastMessage = contact.messages[contact.messages.length - 1];
+          if (lastMessage) {
+              const dateTimeParts = lastMessage.date.split(' ');
+              const timeParts = dateTimeParts[1].split(':');
+              const ora = `${timeParts[0]}:${timeParts[1]}`;
+              return ora;
+          } else {
+              return 'Nessun messaggio';
+          }
+        },
+      
+        mostraOra(dateString) {
+          let parts = dateString.split(' ')[1].split(':');
+          return `${parts[0]}:${parts[1]}`;
       },
-
-      statoContatto(stato){
-        let randomNumber = Math.floor(Math.random() * 2) + 1;
-        if (randomNumber == 1){
-          return stato = 'online';
-        } else {
-          return stato = 'offline';
-        }
-
+        
+        inviaMessaggio() {
+          if (this.newMessage.trim() !== '') {
+              this.contacts[this.contattoSelezionato].messages.push({
+                  message: this.newMessage,
+                  status: 'sent',
+                  date: new Date().toLocaleTimeString() 
+              });
+              this.newMessage = '';
+          }
       },
-    
-
+  },
 }).mount('#app');
 
 
