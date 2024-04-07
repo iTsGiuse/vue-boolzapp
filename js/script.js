@@ -129,6 +129,15 @@ createApp({
                 message: this.newMessage,
                 status: 'sent'
             });
+
+            setTimeout(() => {
+              this.contacts[this.contattoSelezionato].messages.push({
+                  date: new Date().toLocaleString(),
+                  message: 'Ok',
+                  status: 'received'
+              });
+          }, 2000)
+
             this.newMessage = '';
         }
       },
