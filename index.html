@@ -67,11 +67,11 @@
                                         </div>
                                         <div>
                                             <p  :key="index">{{ contact.name }}</p>
-                                            <p class="ultimo-messaggio">{{ ultimoMessaggio(contact) }}</p>
+                                            <p class="ultimo-messaggio">{{ ultimoMessaggio(contact).message }} </p>
                                         </div>
                                     </div>
                                     <div class="orario">
-                                        <span class="grey">{{ ultimoMessaggioOra(contact) }}</span>
+                                        <span class="grey">{{ ultimoMessaggio(contact).date }}</span>
                                     </div>
                                 </div>     
                             </template>
@@ -104,7 +104,7 @@
                         </div>
                         <div class="chat">
                              <div class="message" v-for="(message, index) in contacts[contattoSelezionato].messages" :key="index" :class="{ 'send': message.status === 'sent', 'received': message.status === 'received' }" >
-                                <p class="m-3">{{message.message}}</p>
+                                <p class="m-3">{{ message.message }}</p>
                                 <p class="data-css" > {{ mostraOra(message.date) }}</p>
                             </div>     
                         </div>
@@ -113,7 +113,7 @@
                                 <i class="icona fa-regular fa-face-smile"></i>
                             </div>
                             <div class="box-input-chat">
-                                <input class="input-chat" type="text" v-model="newMessage" placeholder="Scrivi un messaggio" @keyup.enter="inviaMessaggio">
+                                <input class="input-chat" type="text" placeholder="Scrivi un messaggio" v-model="newMessage" @keyup.enter="inviaMessaggio" >
                             </div>
                             <div class="microphone">
                                 <i class="icona fa-solid fa-microphone"></i>
